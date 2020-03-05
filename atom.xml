@@ -6,7 +6,7 @@
   <link href="/whitesodaHGF.github.io/atom.xml" rel="self"/>
   
   <link href="https://whitesodahgf.github.io/"/>
-  <updated>2020-03-05T06:04:24.749Z</updated>
+  <updated>2020-03-05T06:34:13.348Z</updated>
   <id>https://whitesodahgf.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>26. 删除排序数组中的重复项</title>
+    <link href="https://whitesodahgf.github.io/2020/03/05/26-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/"/>
+    <id>https://whitesodahgf.github.io/2020/03/05/26-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</id>
+    <published>2020-03-05T06:33:33.000Z</published>
+    <updated>2020-03-05T06:34:13.348Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;26-删除排序数组中的重复项&quot;&gt;&lt;a href=&quot;#26-删除排序数组中的重复项&quot; class=&quot;headerlink&quot; title=&quot;26. 删除排序数组中的重复项&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/&quot;&gt;26. 删除排序数组中的重复项&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Leetcode" scheme="https://whitesodahgf.github.io/tags/Leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode_200. 岛屿数量</title>
