@@ -1,48 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>26. 删除排序数组中的重复项</title>
-    <url>/whitesodaHGF.github.io/2020/03/05/26-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
-    <content><![CDATA[<h4 id="26-删除排序数组中的重复项"><a href="#26-删除排序数组中的重复项" class="headerlink" title="26. 删除排序数组中的重复项"></a><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">26. 删除排序数组中的重复项</a></h4><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
-<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+    <title>88.合并两个有序数组</title>
+    <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/merge-sorted-array/">Leetcode原题直通车</a></p>
+<blockquote>
+<p>给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。</p>
+<p><strong>输入</strong>:<br>nums1 = [1,2,3,0,0,0], m = 3<br>nums2 = [2,5,6],       n = 3<br><strong>输出</strong>:<br>[1,2,2,3,5,6]</p>
+</blockquote>
 <a id="more"></a>
 
-<p>示例 1:s</p>
-<p>给定数组 nums = [1,1,2], </p>
-<p>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 </p>
-<p>你不需要考虑数组中超出新长度后面的元素。<br>示例 2:</p>
-<p>给定 nums = [0,0,1,1,1,2,2,3,3,4],</p>
-<p>函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</p>
-<p>你不需要考虑数组中超出新长度后面的元素。<br>说明:</p>
-<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
-<p>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
-<p>你可以想象内部操作如下:</p>
-<p>// <code>nums</code> 是以“引用”方式传递的。也就是说，不对实参做任何拷贝<br><code>int len = removeDuplicates(nums);</code></p>
-<p>// 在函数里修改输入数组对于调用者是可见的。<br>// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组合并后再排序"><a href="#数组合并后再排序" class="headerlink" title="数组合并后再排序"></a>数组合并后再排序</h3><p>时间复杂度：O((n+m)log(n+m))<br>空间复杂度: O(1)</p>
+<blockquote>
+<p>没有利用到数组是有序的特性，时间复杂度固定(排序使用快速排序，时间复杂度为O(nlogn))</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    System.arraycopy(nums2, <span class="number">0</span>, nums1, m, n);</span><br><span class="line">    Arrays.sort(nums1);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双指针-归并排序（从小到大）"><a href="#双指针-归并排序（从小到大）" class="headerlink" title="双指针-归并排序（从小到大）"></a>双指针-归并排序（从小到大）</h3><p>时间复杂度：O(n+m)<br>空间复杂度：O(m)</p>
+<blockquote>
+<p>需要把将原来的 nums1数组作为输出，需要另外把原来数组前m个数字放在其他地方，空间复杂度O(m)</p>
+</blockquote>
+<p>思路：利用两个数组已经有序且nums1的数组大小为n+m的情况下，可以使用一个指针指向nums1的头部,一个指针指向nums2的头部，还有一个指针指向新数组的头部，进行从小到大的归并排序，需要另外申请空间。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> idx1=<span class="number">0</span>,idx2=<span class="number">0</span>,idx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[] temp=<span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">    System.arraycopy(nums1, <span class="number">0</span>, temp, <span class="number">0</span>, m);</span><br><span class="line">    <span class="keyword">while</span>(idx1&lt;m &amp;&amp; idx2&lt;n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp[idx1]&lt;nums2[idx2])&#123;</span><br><span class="line">            nums1[idx]=temp[idx1];</span><br><span class="line">            idx1++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            nums1[idx]=nums2[idx2];</span><br><span class="line">            idx2++;</span><br><span class="line">        &#125;</span><br><span class="line">        idx++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(idx1&lt;m)&#123;</span><br><span class="line">        nums1[idx]=temp[idx1];</span><br><span class="line">        idx++;</span><br><span class="line">        idx1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(idx2&lt;n)&#123;</span><br><span class="line">        nums1[idx]=nums2[idx2];</span><br><span class="line">        idx++;</span><br><span class="line">        idx2++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+<h3 id="双指针-归并排序（从大到小）"><a href="#双指针-归并排序（从大到小）" class="headerlink" title="双指针-归并排序（从大到小）"></a>双指针-归并排序（从大到小）</h3><p>时间复杂度：O(n+m)<br>空间复杂度：O(1)</p>
+<p>思路：利用两个数组已经有序且nums1的数组大小为n+m的情况下，可以使用一个指针指向nums1的尾部(m-1),一个指针指向nums2的尾部(n-1)，还有一个指针指向nums1的尾部(n+m-1)，进行从大到小的归并排序，且为在nums1上的原地排序，不需要另外申请空间。</p>
+<p><img src="/public/images/88-1.png" alt="88-1"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index1 = m - <span class="number">1</span>, index2 = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> indexmerge = m + n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (index1 &gt;= <span class="number">0</span> || index2 &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (index1 &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[indexmerge--] = nums2[index2--];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index2 &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[indexmerge--] = nums1[index1--];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[index1] &gt; nums2[index2]) &#123;</span><br><span class="line">            nums1[indexmerge--] = nums1[index1--];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums1[indexmerge--] = nums2[index2--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%BA%8F/</url>
+    <content><![CDATA[<p><strong>双指针</strong>，指的是在遍历数组的过程中，使用两个方向相同或相反的指针进行扫描的做法。一般在有序数组中使用较多，可以利用数组有序的特性简化一些操作。</p>
+<a id="more"></a>
+
+<p><strong>快慢指针</strong>： 使用方向相同但不同步的指针遍历的方法。</p>
+<blockquote>
+<p>需要确定两个指针的移动策略来解决问题，有时可能需要先对数组进行排序，也可能需要贪心算法来决定你的运动策略。</p>
+</blockquote>
+<p><strong>对撞指针</strong>： 使用方向相反的指针遍历的方法。</p>
+<blockquote>
+<p>在数组两头指定头指针和尾指针，从两端到中间迭代数组。遇到有序数组时，应该考虑是否可以用对撞指针来解决。</p>
+</blockquote>
+<p><strong>当遇到有序数组时，应该优先想到双指针来解决问题，因两个指针的同时遍历会减少空间复杂度和时间复杂度。</strong></p>
+]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>167.两数之和II-输入有序数组</title>
+    <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/167-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8CII-%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/">Leetcode原题直通车</a></p>
+<blockquote>
+<p>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。<br>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
+<p><strong>输入</strong>: numbers = [2, 7, 11, 15], target = 9<br><strong>输出</strong>: [1,2]</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="直接循环求解"><a href="#直接循环求解" class="headerlink" title="直接循环求解"></a>直接循环求解</h2><p>超出时间限制，失败。<br>不可以直接使用循环的方法求解，算法时间复杂度为O(n<sup>2</sup>)，耗时很久，超出时间限制。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">       <span class="keyword">int</span>[] index=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;numbers.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(numbers[i]+numbers[j]==target)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(i&lt;j)&#123;</span><br><span class="line">                       index[<span class="number">0</span>]=i+<span class="number">1</span>;</span><br><span class="line">                       index[<span class="number">1</span>]=j+<span class="number">1</span>;</span><br><span class="line">                    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(i&gt;j)&#123;</span><br><span class="line">                        index[<span class="number">0</span>]=j+<span class="number">1</span>;</span><br><span class="line">                        index[<span class="number">1</span>]=i+<span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>思路：因为是有序数组，可以用双指针法，一个指针指向较小的元素，一个指针指向较大的元素，从两端到中间遍历数组。</p>
+<ul>
+<li>如果 sum == target ，返回两个指针索引；</li>
+<li>如果 sum &lt; target ，让左边的指针右移；</li>
+<li>如果 sum &gt; target ，让右边的指针左移；</li>
+</ul>
+</blockquote>
+<h2 id="双指针求解"><a href="#双指针求解" class="headerlink" title="双指针求解"></a>双指针求解</h2><p>通过，时间复杂度为O(n)。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] numbers, <span class="keyword">int</span> target) &#123;     </span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = numbers.length - <span class="number">1</span>;     </span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;         </span><br><span class="line">        <span class="keyword">int</span> sum = numbers[i] + numbers[j];         </span><br><span class="line">        <span class="keyword">if</span> (sum == target)  <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i + <span class="number">1</span>, j + <span class="number">1</span>&#125;;         </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; target)  i++;         </span><br><span class="line">        <span class="keyword">else</span> j--;         </span><br><span class="line">    &#125;     </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>双指针</tag>
+        <tag>对撞指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>26. 删除排序数组中的重复项</title>
+    <url>/whitesodaHGF.github.io/2020/03/05/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/26-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">Leetcode原题直通车</a></p>
+<p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+<a id="more"></a>
 
 <h3 id="自己的解法"><a href="#自己的解法" class="headerlink" title="自己的解法"></a>自己的解法</h3><p>将重复元素首尾记录，移动后续元素消除重复元素。最后数要求是的后一位比前一位大的元素个数。</p>
 <p><strong>结果是时间复杂度很糟糕，需要进一步优化。</strong></p>
 <p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="keyword">null</span>||nums.length&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.length==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> length=nums.length,count=<span class="number">0</span>,start=-<span class="number">1</span>,end=-<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i-<span class="number">1</span>]!=nums[i])&#123;</span><br><span class="line">                <span class="keyword">if</span>(start!=-<span class="number">1</span>&amp;&amp;end!=-<span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> gap = end - start;</span><br><span class="line">                    <span class="comment">// 主要需要优化的地方，如何使删除重复元素高效</span></span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = start; j &lt; length - gap; j++)</span><br><span class="line">                        nums[j] = nums[j + gap];</span><br><span class="line">                    i = start;</span><br><span class="line">                    length = length - gap;</span><br><span class="line">                    start = -<span class="number">1</span>; end = -<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(start==-<span class="number">1</span>&amp;&amp;end==-<span class="number">1</span>)&#123;</span><br><span class="line">                    start=i-<span class="number">1</span>;</span><br><span class="line">                    end=i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> end=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> r;</span><br><span class="line">        <span class="keyword">for</span>(r=<span class="number">0</span>;r&lt;nums.length-<span class="number">1</span>&amp;&amp;nums[r]&lt;nums[r+<span class="number">1</span>];r++);</span><br><span class="line">        count=r+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-
-
 <h3 id="双指针法（快慢指针）"><a href="#双指针法（快慢指针）" class="headerlink" title="双指针法（快慢指针）"></a>双指针法（快慢指针）</h3><p>数组完成排序后，我们可以放置两个指针 i 和 j，其中 i 是慢指针，而 j 是快指针。只要 nums[i] = nums[j]，nums[i]=nums[j]，我们就增加 j 以跳过重复项。</p>
 <p>代码如下：</p>
-<p>漂亮的写法，用快慢指针的方式，解决了大量的元素移动问题（前提是数组已然有序）。</p>
+<p>用快慢指针的方式，解决了大量的元素移动问题（前提是数组已然有序）。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;nums.length;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;nums[j])&#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i]=nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>双指针</tag>
+        <tag>快慢指针</tag>
       </tags>
   </entry>
   <entry>
     <title>Leetcode_200. 岛屿数量</title>
-    <url>/whitesodaHGF.github.io/2020/03/05/Leetcode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/</url>
+    <url>/whitesodaHGF.github.io/2020/03/05/Leetcode/Leetcode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/</url>
     <content><![CDATA[<p>给定一个由 <code>&#39;1&#39;</code>（陆地）和 <code>&#39;0&#39;</code>（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。你可以假设网格的四个边均被水包围。</p>
 <a id="more"></a>
 
