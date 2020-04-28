@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Leetcode_524.通过删除字母匹配到字典里最长单词</title>
-    <url>/whitesodaHGF.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/</url>
+    <url>/whitesodaHGF.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">Leetcode原题直通车</a></p>
 <p>给定一个字符串和一个字符串字典，找到字典里面最长的字符串，该字符串可以通过删除给定字符串的某些字符来得到。如果答案不止一个，返回长度最长且<strong>字典顺序</strong>最小的字符串。如果答案不存在，则返回空字符串。</p>
 <p><strong>输入</strong>：s = “abpcplea”, d = [“ale”,”apple”,”monkey”,”plea”]<br><strong>输出</strong>：”apple”</p>
@@ -16,7 +16,6 @@
       <tags>
         <tag>Leetcode</tag>
         <tag>双指针</tag>
-        <tag>对撞指针</tag>
       </tags>
   </entry>
   <entry>

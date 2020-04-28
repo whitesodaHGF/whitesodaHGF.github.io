@@ -6,7 +6,7 @@
   <link href="/whitesodaHGF.github.io/atom.xml" rel="self"/>
   
   <link href="https://whitesodahgf.github.io/"/>
-  <updated>2020-04-28T10:33:22.283Z</updated>
+  <updated>2020-04-28T10:34:42.061Z</updated>
   <id>https://whitesodahgf.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Leetcode_524.通过删除字母匹配到字典里最长单词</title>
-    <link href="https://whitesodahgf.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/"/>
-    <id>https://whitesodahgf.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/</id>
+    <link href="https://whitesodahgf.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/"/>
+    <id>https://whitesodahgf.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/</id>
     <published>2020-04-28T09:07:15.000Z</published>
-    <updated>2020-04-28T10:33:22.283Z</updated>
+    <updated>2020-04-28T10:34:42.061Z</updated>
     
     <summary type="html">
     
@@ -38,8 +38,6 @@
       <category term="Leetcode" scheme="https://whitesodahgf.github.io/tags/Leetcode/"/>
     
       <category term="双指针" scheme="https://whitesodahgf.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-      <category term="对撞指针" scheme="https://whitesodahgf.github.io/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
