@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>88.合并两个有序数组</title>
+    <title>Leetcode_345.反转字符串中的元音字母</title>
+    <url>/whitesodaHGF.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/345-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/">Leetcode原题直通车</a></p>
+<p>编写一个函数，以字符串作为输入，反转该字符串中的元音字母。</p>
+<blockquote>
+<p><strong>输入</strong>: “hello”<br><strong>输出</strong>: “holle”</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>: “leetcode”<br><strong>输出</strong>: “leotcede”</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><p><strong>思路</strong>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> HashSet&lt;Character&gt; vowels = <span class="keyword">new</span> HashSet&lt;&gt;(</span><br><span class="line">        Arrays.asList(<span class="string">'a'</span>, <span class="string">'A'</span>, <span class="string">'e'</span>, <span class="string">'E'</span>, <span class="string">'i'</span>, <span class="string">'I'</span>, <span class="string">'o'</span>, <span class="string">'O'</span>, <span class="string">'u'</span>, <span class="string">'U'</span>));</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">reverseVowels</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = s.length() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span>[] result = <span class="keyword">new</span> <span class="keyword">char</span>[s.length()];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">char</span> leftchar = s.charAt(left);</span><br><span class="line">        <span class="keyword">char</span> rightchar = s.charAt(right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (vowels.contains(leftchar) &amp;&amp; !vowels.contains(rightchar)) &#123;</span><br><span class="line">            result[right] = rightchar;</span><br><span class="line">            right--;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!vowels.contains(leftchar) &amp;&amp; vowels.contains(rightchar)) &#123;</span><br><span class="line">            result[left] = leftchar;</span><br><span class="line">            left++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!vowels.contains(leftchar) &amp;&amp; !vowels.contains(rightchar)</span><br><span class="line">                || vowels.contains(leftchar) &amp;&amp; vowels.contains(rightchar) &amp;&amp; leftchar == rightchar) &#123;</span><br><span class="line">            result[left] = leftchar;</span><br><span class="line">            result[right] = rightchar;</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (vowels.contains(leftchar) &amp;&amp; vowels.contains(rightchar) &amp;&amp; leftchar != rightchar) &#123;</span><br><span class="line">            result[left] = rightchar;</span><br><span class="line">            result[right] = leftchar;</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (left == right)</span><br><span class="line">        result[left] = s.charAt(left);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> String(result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>双指针</tag>
+        <tag>对撞指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode_234.回文链表</title>
+    <url>/whitesodaHGF.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/234-%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">Leetcode原题直通车</a></p>
+<p>请判断一个链表是否为回文链表。</p>
+<blockquote>
+<p><strong>输入</strong>: 1-&gt;2<br><strong>输出</strong>: false</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>: 1-&gt;2-&gt;2-&gt;1<br><strong>输出</strong>: true</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><p><strong>思路</strong>：复制链表值到数组列表中,使用对撞指针法，判断是否为回文数组。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(head.next==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//转化为回文数组</span></span><br><span class="line">        List&lt;Integer&gt; list=<span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">while</span> (head!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            list.add(head.val);</span><br><span class="line">            head=head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//检查是否是回文数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size()/<span class="number">2</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(list.get(i).intValue()!=list.get(list.size()-<span class="number">1</span>-i).intValue())</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>双指针</tag>
+        <tag>对撞指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode_141.环形链表</title>
+    <url>/whitesodaHGF.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/141-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/linked-list-cycle/">Leetcode原题直通车</a></p>
+<p>给定一个链表，判断链表中是否有环。</p>
+<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
+<blockquote>
+<p><strong>输入</strong>：head = [3,2,0,-4], pos = 1<br><strong>输出</strong>：true<br><strong>解释</strong>：链表中有一个环，其尾部连接到第二个节点。</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>：head = [1,2], pos = 0<br><strong>输出</strong>：true<br><strong>解释</strong>：链表中有一个环，其尾部连接到第一个节点。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="哈希表解法"><a href="#哈希表解法" class="headerlink" title="哈希表解法"></a>哈希表解法</h3><p><strong>思路</strong>：遍历给定链表，每访问一个结点就把结点放入Set中，利用Set中不存放重复元素的特性，判断如果在遍历过程中，当前结点已经放入Set中，就说明链表中有环。如果可以完成链表的遍历，说明链表中无环。</p>
+<p><strong>时间复杂度</strong>：O(n)<br><strong>空间复杂度</strong>：O(n)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Set&lt;ListNode&gt; set=<span class="keyword">new</span> HashSet&lt;ListNode&gt;();</span><br><span class="line">    <span class="keyword">while</span> (head!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(set.contains(head)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> set.add(head);</span><br><span class="line">        head=head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双指针解法"><a href="#双指针解法" class="headerlink" title="双指针解法"></a>双指针解法</h3><p><strong>思路</strong>：使用具有<strong>不同速度</strong>的快慢指针来遍历链表，当慢指针移动一步时，快指针移动两步。<strong>如果链表中不存在环</strong>，那快指针会先一步到达链表尾部。<strong>如果链表中存在环</strong>，那快慢指针会在某次循环中相遇。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ListNode slow = head;</span><br><span class="line">    ListNode fast = head.next;</span><br><span class="line">    <span class="keyword">while</span> (slow != fast) &#123;</span><br><span class="line">        <span class="keyword">if</span> (fast == <span class="keyword">null</span> || fast.next == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>双指针</tag>
+        <tag>快慢指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode_977.有序数组的平方</title>
+    <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/977-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/">Leetcode原题直通车</a></p>
+<blockquote>
+<p>给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>：[-4,-1,0,3,10]<br><strong>输出</strong>：[0,1,9,16,100]</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>：[-7,-3,2,3,11]<br><strong>输出</strong>：[4,9,9,49,121]</p>
+</blockquote>
+<a id="more"></a>
+
+<p><strong>思路</strong>：同样是利用数组有序的特征，使用一个指针指向数组头部，一个指针指数组尾部，可以确保两端的数字是正负值中绝对值最大的。然后从两端向中间遍历，同时将运算的结果写在新的数组上</p>
+<p><strong>时间复杂度</strong>：O(n)<br><strong>空间复杂度</strong>：O(n)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] sortedSquares(<span class="keyword">int</span>[] A) &#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = A.length - <span class="number">1</span>, i = right;</span><br><span class="line">    <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> leftNum = A[left] * A[left], rightNum = A[right] * A[right];</span><br><span class="line">        <span class="keyword">if</span> (leftNum &gt; rightNum) &#123;</span><br><span class="line">            result[i] = leftNum;</span><br><span class="line">            left++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result[i] = rightNum;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>双指针</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode_88.合并两个有序数组</title>
     <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/merge-sorted-array/">Leetcode原题直通车</a></p>
 <blockquote>
@@ -10,23 +119,23 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="数组合并后再排序"><a href="#数组合并后再排序" class="headerlink" title="数组合并后再排序"></a>数组合并后再排序</h3><p>时间复杂度：O((n+m)log(n+m))<br>空间复杂度: O(1)</p>
+<h3 id="数组合并后再排序"><a href="#数组合并后再排序" class="headerlink" title="数组合并后再排序"></a>数组合并后再排序</h3><p><strong>时间复杂度</strong>：O((n+m)log(n+m))<br><strong>空间复杂度</strong>: O(1)</p>
 <blockquote>
 <p>没有利用到数组是有序的特性，时间复杂度固定(排序使用快速排序，时间复杂度为O(nlogn))</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    System.arraycopy(nums2, <span class="number">0</span>, nums1, m, n);</span><br><span class="line">    Arrays.sort(nums1);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="双指针-归并排序（从小到大）"><a href="#双指针-归并排序（从小到大）" class="headerlink" title="双指针-归并排序（从小到大）"></a>双指针-归并排序（从小到大）</h3><p>时间复杂度：O(n+m)<br>空间复杂度：O(m)</p>
+<h3 id="双指针-归并排序（从小到大）"><a href="#双指针-归并排序（从小到大）" class="headerlink" title="双指针-归并排序（从小到大）"></a>双指针-归并排序（从小到大）</h3><p><strong>时间复杂度：O</strong>(n+m)<br><strong>空间复杂度：O</strong>(m)</p>
 <blockquote>
 <p>需要把将原来的 nums1数组作为输出，需要另外把原来数组前m个数字放在其他地方，空间复杂度O(m)</p>
 </blockquote>
-<p>思路：利用两个数组已经有序且nums1的数组大小为n+m的情况下，可以使用一个指针指向nums1的头部,一个指针指向nums2的头部，还有一个指针指向新数组的头部，进行从小到大的归并排序，需要另外申请空间。</p>
+<p><strong>思路</strong>：利用两个数组已经有序且nums1的数组大小为n+m的情况下，可以使用一个指针指向nums1的头部,一个指针指向nums2的头部，还有一个指针指向新数组的头部，进行从小到大的归并排序，需要另外申请空间。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> idx1=<span class="number">0</span>,idx2=<span class="number">0</span>,idx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[] temp=<span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">    System.arraycopy(nums1, <span class="number">0</span>, temp, <span class="number">0</span>, m);</span><br><span class="line">    <span class="keyword">while</span>(idx1&lt;m &amp;&amp; idx2&lt;n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(temp[idx1]&lt;nums2[idx2])&#123;</span><br><span class="line">            nums1[idx]=temp[idx1];</span><br><span class="line">            idx1++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            nums1[idx]=nums2[idx2];</span><br><span class="line">            idx2++;</span><br><span class="line">        &#125;</span><br><span class="line">        idx++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(idx1&lt;m)&#123;</span><br><span class="line">        nums1[idx]=temp[idx1];</span><br><span class="line">        idx++;</span><br><span class="line">        idx1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(idx2&lt;n)&#123;</span><br><span class="line">        nums1[idx]=nums2[idx2];</span><br><span class="line">        idx++;</span><br><span class="line">        idx2++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="双指针-归并排序（从大到小）"><a href="#双指针-归并排序（从大到小）" class="headerlink" title="双指针-归并排序（从大到小）"></a>双指针-归并排序（从大到小）</h3><p>时间复杂度：O(n+m)<br>空间复杂度：O(1)</p>
-<p>思路：利用两个数组已经有序且nums1的数组大小为n+m的情况下，可以使用一个指针指向nums1的尾部(m-1),一个指针指向nums2的尾部(n-1)，还有一个指针指向nums1的尾部(n+m-1)，进行从大到小的归并排序，且为在nums1上的原地排序，不需要另外申请空间。</p>
-<p><img src="/images/88-1.png" alt="88-1"></p>
+<h3 id="双指针-归并排序（从大到小）"><a href="#双指针-归并排序（从大到小）" class="headerlink" title="双指针-归并排序（从大到小）"></a>双指针-归并排序（从大到小）</h3><p><strong>时间复杂度：O</strong>(n+m)<br><strong>空间复杂度：O</strong>(1)</p>
+<p><strong>思路</strong>：利用两个数组已经有序且nums1的数组大小为n+m的情况下，可以使用一个指针指向nums1的尾部(m-1),一个指针指向nums2的尾部(n-1)，还有一个指针指向nums1的尾部(n+m-1)，进行从大到小的归并排序，且为在nums1上的原地排序，不需要另外申请空间。</p>
+<p><img src="/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/88-1.png" alt="88-1"></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index1 = m - <span class="number">1</span>, index2 = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> indexmerge = m + n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (index1 &gt;= <span class="number">0</span> || index2 &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (index1 &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[indexmerge--] = nums2[index2--];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (index2 &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            nums1[indexmerge--] = nums1[index1--];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[index1] &gt; nums2[index2]) &#123;</span><br><span class="line">            nums1[indexmerge--] = nums1[index1--];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums1[indexmerge--] = nums2[index2--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>双指针</category>
@@ -37,7 +146,7 @@
       </tags>
   </entry>
   <entry>
-    <title>序</title>
+    <title>双指针专题序</title>
     <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%BA%8F/</url>
     <content><![CDATA[<p><strong>双指针</strong>，指的是在遍历数组的过程中，使用两个方向相同或相反的指针进行扫描的做法。一般在有序数组中使用较多，可以利用数组有序的特性简化一些操作。</p>
 <a id="more"></a>
@@ -60,7 +169,7 @@
       </tags>
   </entry>
   <entry>
-    <title>167.两数之和II-输入有序数组</title>
+    <title>Leetcode_167.两数之和II-输入有序数组</title>
     <url>/whitesodaHGF.github.io/2020/04/27/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/167-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8CII-%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/">Leetcode原题直通车</a></p>
 <blockquote>
@@ -94,7 +203,7 @@
       </tags>
   </entry>
   <entry>
-    <title>26. 删除排序数组中的重复项</title>
+    <title>Leetcode_26. 删除排序数组中的重复项</title>
     <url>/whitesodaHGF.github.io/2020/03/05/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88/26-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
     <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">Leetcode原题直通车</a></p>
 <p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
@@ -122,9 +231,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Leetcode_200. 岛屿数量</title>
-    <url>/whitesodaHGF.github.io/2020/03/05/Leetcode/Leetcode-200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/</url>
-    <content><![CDATA[<p>给定一个由 <code>&#39;1&#39;</code>（陆地）和 <code>&#39;0&#39;</code>（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。你可以假设网格的四个边均被水包围。</p>
+    <title>Leetcode_200.岛屿数量</title>
+    <url>/whitesodaHGF.github.io/2020/03/05/Leetcode/200-%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F/</url>
+    <content><![CDATA[<p>=&gt; <a href="https://leetcode-cn.com/problems/number-of-islands/">Leetcode原题直通车</a></p>
+<p>给定一个由 <code>&#39;1&#39;</code>（陆地）和 <code>&#39;0&#39;</code>（水）组成的的二维网格，计算岛屿的数量。一个岛被水包围，并且它是通过水平方向或垂直方向上相邻的陆地连接而成的。你可以假设网格的四个边均被水包围。</p>
 <a id="more"></a>
 
 <p><strong>示例 1:</strong></p>
