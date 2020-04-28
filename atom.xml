@@ -6,7 +6,7 @@
   <link href="/whitesodaHGF.github.io/atom.xml" rel="self"/>
   
   <link href="https://whitesodahgf.github.io/"/>
-  <updated>2020-04-28T02:30:11.369Z</updated>
+  <updated>2020-04-28T10:33:22.283Z</updated>
   <id>https://whitesodahgf.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Leetcode_524.通过删除字母匹配到字典里最长单词</title>
+    <link href="https://whitesodahgf.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/"/>
+    <id>https://whitesodahgf.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/</id>
+    <published>2020-04-28T09:07:15.000Z</published>
+    <updated>2020-04-28T10:33:22.283Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;=&amp;gt; &lt;a href=&quot;https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/&quot;&gt;Leetcode原题直通车&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;给定一个字符串和一个字符串字典，找到字典里面最长的字符串，该字符串可以通过删除给定字符串的某些字符来得到。如果答案不止一个，返回长度最长且&lt;strong&gt;字典顺序&lt;/strong&gt;最小的字符串。如果答案不存在，则返回空字符串。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输入&lt;/strong&gt;：s = “abpcplea”, d = [“ale”,”apple”,”monkey”,”plea”]&lt;br&gt;&lt;strong&gt;输出&lt;/strong&gt;：”apple”&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="双指针" scheme="https://whitesodahgf.github.io/categories/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+    
+      <category term="Leetcode" scheme="https://whitesodahgf.github.io/tags/Leetcode/"/>
+    
+      <category term="双指针" scheme="https://whitesodahgf.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+      <category term="对撞指针" scheme="https://whitesodahgf.github.io/tags/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Leetcode_345.反转字符串中的元音字母</title>
     <link href="https://whitesodahgf.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/345-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/"/>
     <id>https://whitesodahgf.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/345-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/</id>
     <published>2020-04-28T02:23:31.000Z</published>
-    <updated>2020-04-28T02:30:11.369Z</updated>
+    <updated>2020-04-28T08:25:21.814Z</updated>
     
     <summary type="html">
     

@@ -195,6 +195,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://whitesodahgf.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/whitesodaHGF.github.io/images/josuke.jpg">
+      <meta itemprop="name" content="whitesodaHGF">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="whitesodaHGF">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/whitesodaHGF.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">Leetcode_524.通过删除字母匹配到字典里最长单词</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-28 17:07:15 / 修改时间：18:33:22" itemprop="dateCreated datePublished" datetime="2020-04-28T17:07:15+08:00">2020-04-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/whitesodaHGF.github.io/categories/%E5%8F%8C%E6%8C%87%E9%92%88/" itemprop="url" rel="index"><span itemprop="name">双指针</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/whitesodaHGF.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode_524.通过删除字母匹配到字典里最长单词" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/whitesodaHGF.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/whitesodaHGF.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>=&gt; <a href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">Leetcode原题直通车</a></p>
+<p>给定一个字符串和一个字符串字典，找到字典里面最长的字符串，该字符串可以通过删除给定字符串的某些字符来得到。如果答案不止一个，返回长度最长且<strong>字典顺序</strong>最小的字符串。如果答案不存在，则返回空字符串。</p>
+<p><strong>输入</strong>：s = “abpcplea”, d = [“ale”,”apple”,”monkey”,”plea”]<br><strong>输出</strong>：”apple”</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/whitesodaHGF.github.io/2020/04/28/524-%E9%80%9A%E8%BF%87%E5%88%A0%E9%99%A4%E5%AD%97%E6%AF%8D%E5%8C%B9%E9%85%8D%E5%88%B0%E5%AD%97%E5%85%B8%E9%87%8C%E6%9C%80%E9%95%BF%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://whitesodahgf.github.io/2020/04/28/Leetcode/%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%93%E9%A2%98/%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88/345-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -220,7 +318,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-28 10:23:31 / 修改时间：10:30:11" itemprop="dateCreated datePublished" datetime="2020-04-28T10:23:31+08:00">2020-04-28</time>
+              <time title="创建时间：2020-04-28 10:23:31 / 修改时间：16:25:21" itemprop="dateCreated datePublished" datetime="2020-04-28T10:23:31+08:00">2020-04-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1106,100 +1204,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://whitesodahgf.github.io/2020/03/05/%E4%BB%8E%E8%B4%AD%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E5%AD%A6%E7%94%9F%E6%9C%BA%E5%88%B0%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AASpringBoot+Vue%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/whitesodaHGF.github.io/images/josuke.jpg">
-      <meta itemprop="name" content="whitesodaHGF">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="whitesodaHGF">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/whitesodaHGF.github.io/2020/03/05/%E4%BB%8E%E8%B4%AD%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E5%AD%A6%E7%94%9F%E6%9C%BA%E5%88%B0%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AASpringBoot+Vue%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">从购置阿里云学生机到开发部署一个SpringBoot+Vue项目全过程</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-05 09:32:15 / 修改时间：14:03:50" itemprop="dateCreated datePublished" datetime="2020-03-05T09:32:15+08:00">2020-03-05</time>
-            </span>
-
-          
-            <span id="/whitesodaHGF.github.io/2020/03/05/%E4%BB%8E%E8%B4%AD%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E5%AD%A6%E7%94%9F%E6%9C%BA%E5%88%B0%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AASpringBoot+Vue%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="从购置阿里云学生机到开发部署一个SpringBoot+Vue项目全过程" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/whitesodaHGF.github.io/2020/03/05/%E4%BB%8E%E8%B4%AD%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E5%AD%A6%E7%94%9F%E6%9C%BA%E5%88%B0%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AASpringBoot+Vue%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/whitesodaHGF.github.io/2020/03/05/%E4%BB%8E%E8%B4%AD%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E5%AD%A6%E7%94%9F%E6%9C%BA%E5%88%B0%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AASpringBoot+Vue%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>如题，本文旨在记录自己从开发到部署一个项目的过程中遇到的问题和解决方案，也可以作为下一次开发部署的参考。因为这个文档是之后写的，可能细节上会有点偏差，欢迎指正。</p>
-<h2 id="购置阿里云学生机"><a href="#购置阿里云学生机" class="headerlink" title="购置阿里云学生机"></a>购置阿里云学生机</h2><p><a href="https://promotion.aliyun.com/ntms/act/campus2018.html">阿里云云翼计划</a></p>
-<p>这里购买的是阿里云的云服务器ECS（学生优惠购买需要完成认证），相对于轻量应用服务器来说，可操作空间更大，权限更多一些。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200105162508352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDM1OTAwMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在购买过程中，有需要设置实例登录用户的用户名和密码，用户名默认root就可以，一定要记住密码，后面连接服务器需要用到。</p>
-<p>购买之后，可以在阿里云 =&gt;云服务器ecs =&gt; 实例和镜像 =&gt; 实例 中找到自己购买的服务器。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/whitesodaHGF.github.io/2020/03/05/%E4%BB%8E%E8%B4%AD%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E5%AD%A6%E7%94%9F%E6%9C%BA%E5%88%B0%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AASpringBoot+Vue%E9%A1%B9%E7%9B%AE%E5%85%A8%E8%BF%87%E7%A8%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/whitesodaHGF.github.io/page/2/">2</a><a class="extend next" rel="next" href="/whitesodaHGF.github.io/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1266,7 +1276,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/whitesodaHGF.github.io/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
